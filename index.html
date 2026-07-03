@@ -3,418 +3,440 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Momesso Digital - Estratégia e Performance</title>
+  <title>Momesso Digital - Parceiros Estratégicos em Crescimento</title>
   
+  <!-- Favicon gerado nativamente em SVG com o logotipo "M" -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2300F0FF'/%3E%3Ctext x='50%25' y='55%25' font-family='Arial, sans-serif' font-weight='900' font-style='italic' font-size='44' fill='%230A0A0A' text-anchor='middle' dominant-baseline='middle'%3EM%3C/text%3E%3C/svg%3E" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #121212; color: #EAEAEA; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #F3F4F6; margin: 0; padding: 0; overflow-x: hidden; }
     html { scroll-behavior: smooth; }
-    .scrollbar-hide::-webkit-scrollbar { display: none; }
-    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-    @keyframes fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-in { animation: fade-in 0.3s ease-out forwards; }
+    
+    /* Clean Animations */
+    @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-up { animation: fade-up 0.6s ease-out forwards; }
+    
+    /* Subtle Glow Effects */
+    .glow-cyan { text-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+    .box-glow:hover { box-shadow: 0 0 30px rgba(0, 240, 255, 0.1); }
+    
+    /* Image Placeholders (To be replaced by the user) */
+    .img-placeholder { background-color: #1F2937; border: 1px dashed #374151; display: flex; align-items: center; justify-content: center; color: #6B7280; text-align: center; font-size: 0.875rem; }
   </style>
 </head>
-<body class="bg-[#121212] text-[#EAEAEA] font-sans selection:bg-[#00F0FF] selection:text-[#121212]">
-  
-  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
-    <div class="container mx-auto px-6 flex justify-between items-center">
-      <div class="flex items-center gap-2 group cursor-pointer">
-        <div class="w-9 h-9 bg-[#00F0FF] rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
-          <span class="text-[#121212] font-black text-xl italic">M</span>
-        </div>
-        <span class="text-xl font-black tracking-tighter uppercase text-white">MOMESSO<span class="text-[#00F0FF]">DIGITAL</span></span>
-      </div>
+<body class="selection:bg-[#00F0FF] selection:text-[#0A0A0A]">
 
-      <div class="hidden lg:flex items-center gap-10">
-        <a href="#servicos" class="text-xs font-bold uppercase tracking-widest text-[#EAEAEA]/70 hover:text-white transition-colors">Serviços</a>
-        <a href="#resultados" class="text-xs font-bold uppercase tracking-widest text-[#EAEAEA]/70 hover:text-white transition-colors">Resultados</a>
-        <a href="#portfolio" class="text-xs font-bold uppercase tracking-widest text-[#EAEAEA]/70 hover:text-white transition-colors">Portfólio</a>
-        <a href="#contato" class="bg-[#00F0FF] text-[#121212] px-8 py-2.5 rounded-full text-xs font-black uppercase tracking-tighter hover:bg-white transition-all shadow-[0_0_15px_rgba(0,240,255,0.3)]">
-          Falar com Especialista
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/5 py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center max-w-7xl">
+      
+      <!-- Logo -->
+      <a href="#" onclick="switchView('home'); return false;" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 bg-[#00F0FF] flex items-center justify-center rounded-sm group-hover:bg-white transition-colors">
+          <span class="text-[#0A0A0A] font-black text-lg italic leading-none">M</span>
+        </div>
+        <span class="text-xl font-black tracking-tighter uppercase text-white">MOMESSO<span class="text-[#00F0FF] font-light">DIGITAL</span></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#metodo" onclick="switchView('home')" class="text-sm font-semibold uppercase tracking-wide text-gray-400 hover:text-white transition-colors">O Método</a>
+        <a href="#solucoes" onclick="switchView('home')" class="text-sm font-semibold uppercase tracking-wide text-gray-400 hover:text-white transition-colors">Soluções</a>
+        <a href="#resultados" onclick="switchView('home')" class="text-sm font-semibold uppercase tracking-wide text-gray-400 hover:text-white transition-colors">Resultados</a>
+        <a href="#" onclick="switchView('portfolio'); return false;" class="text-sm font-semibold uppercase tracking-wide text-gray-400 hover:text-white transition-colors">Portfólio</a>
+        <a href="#contato" onclick="switchView('home')" class="bg-[#00F0FF] text-[#0A0A0A] px-6 py-2.5 font-bold uppercase tracking-wide hover:bg-white transition-colors">
+          Agendar Reunião
         </a>
       </div>
 
-      <button id="btn-menu" class="lg:hidden text-[#EAEAEA]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <!-- Mobile Menu Button -->
+      <button id="btn-menu" class="lg:hidden text-white p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
       </button>
     </div>
 
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#121212] border-b border-[#212121] p-8 flex-col gap-6 shadow-xl">
-      <a href="#servicos" class="mobile-link text-lg font-bold text-[#EAEAEA]">Serviços</a>
-      <a href="#resultados" class="mobile-link text-lg font-bold text-[#EAEAEA]">Resultados de Tráfego</a>
-      <a href="#portfolio" class="mobile-link text-lg font-bold text-[#EAEAEA]">Portfólio Web</a>
-      <a href="#contato" class="mobile-link bg-[#00F0FF] text-[#121212] p-4 rounded-xl text-center font-black uppercase">Começar Agora</a>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0A0A0A] border-b border-white/5 p-6 flex-col gap-4">
+      <a href="#metodo" onclick="switchView('home')" class="mobile-link text-lg font-bold text-gray-300">O Método</a>
+      <a href="#solucoes" onclick="switchView('home')" class="mobile-link text-lg font-bold text-gray-300">Nossas Soluções</a>
+      <a href="#resultados" onclick="switchView('home')" class="mobile-link text-lg font-bold text-gray-300">Casos de Sucesso</a>
+      <a href="#" onclick="switchView('portfolio')" class="mobile-link text-lg font-bold text-gray-300">Portfólio Web</a>
+      <a href="#contato" onclick="switchView('home')" class="mobile-link bg-[#00F0FF] text-[#0A0A0A] p-4 text-center font-bold uppercase mt-4">Falar com Consultor</a>
     </div>
   </nav>
 
-  <section class="relative pt-48 pb-32 overflow-hidden px-6">
-    <div class="absolute top-40 left-0 w-[400px] h-[400px] bg-[#00F0FF]/10 blur-[120px] rounded-full -ml-32"></div>
-    <div class="container mx-auto max-w-5xl relative z-10">
-      <div class="flex items-center gap-2 mb-6">
-          <span class="text-[#EAEAEA]/50 text-xs font-black uppercase tracking-[0.3em] bg-[#212121] px-4 py-1.5 rounded-full border border-[#EAEAEA]/5 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] mr-2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-3 5.98-5.35.47-.55 1.17-.55 1.64 0C14.5 2.15 16.5 4 18.5 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> Foco em Retorno
-          </span>
-      </div>
-      <h1 class="text-5xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tighter text-white uppercase">
-        Estrutura digital <br />
-        que <span class="text-[#00F0FF] italic underline decoration-[#00F0FF]/30">escala vendas.</span>
-      </h1>
-      <p class="text-lg md:text-xl text-[#EAEAEA]/70 mb-12 max-w-2xl leading-relaxed">
-        Consultoria tática, gestão de tráfego focada em ROI e desenvolvimento de páginas de alta conversão. Resolvemos o seu problema de vendas online pela raiz.
-      </p>
-      <a href="#contato" class="bg-[#00F0FF] text-[#121212] px-12 py-5 rounded-full font-black text-lg inline-flex items-center gap-3 hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,240,255,0.2)] uppercase">
-        Solicitar Diagnóstico 
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-      </a>
-    </div>
-  </section>
+  <div id="home-view" class="block">
 
-  <section id="servicos" class="py-24 bg-[#1A1D24] border-y border-[#EAEAEA]/5">
-      <div class="container mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter mb-4">Os nossos Pilares de Ação</h2>
-          <p class="text-[#EAEAEA]/60">Sem distrações. Ofertamos apenas o que gera ponteiro no fluxo de caixa da sua empresa.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- Serviço 1 -->
-            <div class="bg-[#121212] p-10 rounded-[2rem] border border-[#EAEAEA]/5 hover:border-[#00F0FF]/30 transition-all group flex flex-col h-full shadow-lg">
-                <div class="mb-6 bg-[#1A1D24] p-4 inline-block rounded-2xl">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF]"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4 text-white uppercase">Consultoria Estratégica</h3>
-                <p class="text-[#EAEAEA]/50 text-sm leading-relaxed mb-8 flex-grow">Análise profunda do seu funil comercial, identificação de gargalos e plano de ação claro para escalar operações digitais com previsibilidade.</p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-2 text-xs font-bold text-[#EAEAEA]/70"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Diagnóstico de Funil</li>
-                    <li class="flex items-center gap-2 text-xs font-bold text-[#EAEAEA]/70"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Otimização de Conversão (CRO)</li>
-                </ul>
-            </div>
-
-            <!-- Serviço 2 -->
-            <div class="bg-[#121212] p-10 rounded-[2rem] border border-[#EAEAEA]/5 hover:border-[#00F0FF]/30 transition-all group flex flex-col h-full shadow-lg">
-                <div class="mb-6 bg-[#1A1D24] p-4 inline-block rounded-2xl">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF]"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4 text-white uppercase">Gestão de Tráfego</h3>
-                <p class="text-[#EAEAEA]/50 text-sm leading-relaxed mb-8 flex-grow">Compra de mídia focada estritamente em ROI. Google, Meta e TikTok Ads geridos com inteligência de dados, não intuição.</p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-2 text-xs font-bold text-[#EAEAEA]/70"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Google Ads e Meta Ads</li>
-                    <li class="flex items-center gap-2 text-xs font-bold text-[#EAEAEA]/70"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Tracking e Analytics Avançado</li>
-                </ul>
-            </div>
-
-            <!-- Serviço 3 -->
-            <div class="bg-[#121212] p-10 rounded-[2rem] border border-[#EAEAEA]/5 hover:border-[#00F0FF]/30 transition-all group flex flex-col h-full shadow-lg">
-                <div class="mb-6 bg-[#1A1D24] p-4 inline-block rounded-2xl">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF]"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="9" y2="9"/><line x1="9" x2="9" y1="21" y2="9"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-4 text-white uppercase">Desenvolvimento Web</h3>
-                <p class="text-[#EAEAEA]/50 text-sm leading-relaxed mb-8 flex-grow">A sua estrutura na internet precisa vender. Desenvolvemos páginas de alta conversão, rápidas e focadas na experiência do usuário.</p>
-                <ul class="space-y-3">
-                    <li class="flex items-center gap-2 text-xs font-bold text-[#EAEAEA]/70"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Landing Pages de Vendas</li>
-                    <li class="flex items-center gap-2 text-xs font-bold text-[#EAEAEA]/70"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] flex-shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Otimização de Velocidade & UX/UI</li>
-                </ul>
-            </div>
-
-        </div>
-      </div>
-  </section>
-
-  <section id="resultados" class="py-32 bg-[#121212]">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <div class="max-w-2xl">
-            <span class="text-[#00F0FF] text-xs font-black uppercase tracking-[0.3em] block mb-4">Gestão de Tráfego</span>
-            <h2 class="text-4xl font-black text-white uppercase tracking-tighter">Resultados nos Bastidores</h2>
-            <p class="text-[#EAEAEA]/60 mt-4 text-lg">Por questões de confidencialidade de estratégia (NDA), mantemos os nomes dos nossos parceiros em sigilo. Os números, no entanto, falam por si.</p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Case 1 -->
-            <div class="bg-[#1A1D24] p-10 rounded-[2rem] border border-[#EAEAEA]/5 relative overflow-hidden group hover:-translate-y-2 transition-transform">
-                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                </div>
-                <div class="flex items-center gap-3 mb-6 relative z-10">
-                  <div class="bg-[#121212] p-3 rounded-lg border border-[#EAEAEA]/10 text-[#00F0FF]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                  </div>
-                  <span class="text-[#EAEAEA] font-bold text-sm uppercase tracking-wider">E-commerce de Nicho Premium</span>
-                </div>
-                <div class="text-5xl font-black text-white mb-4 relative z-10">ROI 15.8x</div>
-                <p class="text-[#EAEAEA]/60 text-sm leading-relaxed relative z-10">Reestruturação completa de campanhas no Meta Ads e Google Shopping. Redução de 45% no CPA mantendo o ticket médio elevado.</p>
-            </div>
-
-            <!-- Case 2 -->
-            <div class="bg-[#1A1D24] p-10 rounded-[2rem] border border-[#EAEAEA]/5 relative overflow-hidden group hover:-translate-y-2 transition-transform">
-                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                </div>
-                <div class="flex items-center gap-3 mb-6 relative z-10">
-                  <div class="bg-[#121212] p-3 rounded-lg border border-[#EAEAEA]/10 text-[#00F0FF]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                  </div>
-                  <span class="text-[#EAEAEA] font-bold text-sm uppercase tracking-wider">Negócio Local (Serviços)</span>
-                </div>
-                <div class="text-5xl font-black text-white mb-4 relative z-10">+410% Leads</div>
-                <p class="text-[#EAEAEA]/60 text-sm leading-relaxed relative z-10">Lotação de agenda em menos de 3 meses. Estratégia hiper-localizada com Google Meu Negócio e Meta Ads.</p>
-            </div>
-
-            <!-- Case 3 -->
-            <div class="bg-[#1A1D24] p-10 rounded-[2rem] border border-[#EAEAEA]/5 relative overflow-hidden group hover:-translate-y-2 transition-transform">
-                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                </div>
-                <div class="flex items-center gap-3 mb-6 relative z-10">
-                  <div class="bg-[#121212] p-3 rounded-lg border border-[#EAEAEA]/10 text-[#00F0FF]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-                  </div>
-                  <span class="text-[#EAEAEA] font-bold text-sm uppercase tracking-wider">B2B Tecnologia (SaaS)</span>
-                </div>
-                <div class="text-5xl font-black text-white mb-4 relative z-10">CPL -60%</div>
-                <p class="text-[#EAEAEA]/60 text-sm leading-relaxed relative z-10">Otimização de funil complexo focado em decisores. Captação de leads B2B altamente qualificados via Google Search.</p>
-            </div>
-        </div>
-      </div>
-  </section>
-
-  <section id="portfolio" class="py-32 bg-[#1A1D24] border-y border-[#EAEAEA]/5 relative overflow-hidden">
-    <div class="absolute left-0 bottom-0 w-[500px] h-[500px] bg-[#00F0FF]/5 blur-[150px] rounded-full -ml-40 -mb-40"></div>
-    
-    <div class="container mx-auto px-6 relative z-10">
-      <div class="text-center max-w-3xl mx-auto mb-20">
-        <span class="text-[#00F0FF] text-xs font-black uppercase tracking-[0.3em] block mb-4">Desenvolvimento Web</span>
-        <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">A sua vitrine que converte</h2>
-        <p class="text-[#EAEAEA]/60 text-lg">Ambientes digitais criados com um único foco estratégico: transformar a atenção do visitante em ação.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Site 1 -->
-        <div class="bg-[#121212] rounded-[2rem] border border-[#EAEAEA]/10 overflow-hidden flex flex-col group">
-          <div class="bg-[#212121] px-4 py-3 flex gap-2 border-b border-[#EAEAEA]/5">
-            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-            <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-          </div>
-          <div class="h-48 bg-gradient-to-br from-[#1A1D24] to-[#121212] p-6 flex flex-col justify-between border-b border-[#EAEAEA]/5 group-hover:from-[#1A1D24] group-hover:to-[#1A1D24]/80 transition-colors">
-              <div class="w-20 h-4 bg-[#EAEAEA]/10 rounded-full mb-4"></div>
-              <div class="space-y-2">
-                <div class="w-3/4 h-6 bg-[#EAEAEA]/20 rounded mb-2"></div>
-                <div class="w-1/2 h-6 bg-[#EAEAEA]/10 rounded"></div>
-              </div>
-              <div class="w-24 h-8 bg-[#00F0FF]/20 rounded-lg mt-auto flex items-center justify-center">
-                <div class="w-10 h-2 bg-[#00F0FF]/50 rounded-full"></div>
-              </div>
-          </div>
-          <div class="p-8 flex-grow flex flex-col">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-[#00F0FF] text-[10px] font-black uppercase tracking-widest bg-[#00F0FF]/10 px-3 py-1 rounded-md">Landing Page</span>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-2">Infoproduto / Curso Online</h4>
-            <p class="text-sm font-bold text-[#EAEAEA]/50 mb-4">Taxa de Conv: 28%</p>
-            <p class="text-[#EAEAEA]/40 text-sm leading-relaxed mt-auto">Estrutura focada em copy agressiva, VSL otimizado e carregamento em menos de 1.5s.</p>
-          </div>
-        </div>
-
-        <!-- Site 2 -->
-        <div class="bg-[#121212] rounded-[2rem] border border-[#EAEAEA]/10 overflow-hidden flex flex-col group">
-          <div class="bg-[#212121] px-4 py-3 flex gap-2 border-b border-[#EAEAEA]/5">
-            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-            <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-          </div>
-          <div class="h-48 bg-gradient-to-br from-[#1A1D24] to-[#121212] p-6 flex flex-col justify-between border-b border-[#EAEAEA]/5 group-hover:from-[#1A1D24] group-hover:to-[#1A1D24]/80 transition-colors">
-              <div class="w-20 h-4 bg-[#EAEAEA]/10 rounded-full mb-4"></div>
-              <div class="space-y-2">
-                <div class="w-3/4 h-6 bg-[#EAEAEA]/20 rounded mb-2"></div>
-                <div class="w-1/2 h-6 bg-[#EAEAEA]/10 rounded"></div>
-              </div>
-              <div class="w-24 h-8 bg-[#00F0FF]/20 rounded-lg mt-auto flex items-center justify-center">
-                <div class="w-10 h-2 bg-[#00F0FF]/50 rounded-full"></div>
-              </div>
-          </div>
-          <div class="p-8 flex-grow flex flex-col">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-[#00F0FF] text-[10px] font-black uppercase tracking-widest bg-[#00F0FF]/10 px-3 py-1 rounded-md">Site Institucional</span>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-2">Escritório de Advocacia</h4>
-            <p class="text-sm font-bold text-[#EAEAEA]/50 mb-4">Foco em Autoridade</p>
-            <p class="text-[#EAEAEA]/40 text-sm leading-relaxed mt-auto">Design premium, blog integrado para SEO e múltiplos pontos de captura de leads legais.</p>
-          </div>
-        </div>
-
-        <!-- Site 3 -->
-        <div class="bg-[#121212] rounded-[2rem] border border-[#EAEAEA]/10 overflow-hidden flex flex-col group">
-          <div class="bg-[#212121] px-4 py-3 flex gap-2 border-b border-[#EAEAEA]/5">
-            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-            <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-            <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-          </div>
-          <div class="h-48 bg-gradient-to-br from-[#1A1D24] to-[#121212] p-6 flex flex-col justify-between border-b border-[#EAEAEA]/5 group-hover:from-[#1A1D24] group-hover:to-[#1A1D24]/80 transition-colors">
-              <div class="w-20 h-4 bg-[#EAEAEA]/10 rounded-full mb-4"></div>
-              <div class="space-y-2">
-                <div class="w-3/4 h-6 bg-[#EAEAEA]/20 rounded mb-2"></div>
-                <div class="w-1/2 h-6 bg-[#EAEAEA]/10 rounded"></div>
-              </div>
-              <div class="w-24 h-8 bg-[#00F0FF]/20 rounded-lg mt-auto flex items-center justify-center">
-                <div class="w-10 h-2 bg-[#00F0FF]/50 rounded-full"></div>
-              </div>
-          </div>
-          <div class="p-8 flex-grow flex flex-col">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-[#00F0FF] text-[10px] font-black uppercase tracking-widest bg-[#00F0FF]/10 px-3 py-1 rounded-md">Landing Page</span>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-2">Clínica de Estética</h4>
-            <p class="text-sm font-bold text-[#EAEAEA]/50 mb-4">Taxa de Conv: 32%</p>
-            <p class="text-[#EAEAEA]/40 text-sm leading-relaxed mt-auto">Agendamento integrado, prova social em destaque e otimização extrema para mobile.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="contato" class="py-32 bg-[#121212]">
-      <div class="container mx-auto max-w-4xl px-6">
-        <div class="bg-[#1A1D24] p-12 rounded-[3rem] border border-[#EAEAEA]/5 shadow-2xl">
-            <form id="contact-form" class="space-y-8">
-                <div class="text-center mb-10">
-                  <h2 class="text-3xl font-black text-white uppercase tracking-tighter mb-2">Solicite um Diagnóstico</h2>
-                  <p class="text-[#EAEAEA]/50 text-sm">Selecione o serviço e deixe as suas informações. Retornaremos em breve.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input required name="name" placeholder="Nome Completo" class="w-full bg-[#121212] border border-[#EAEAEA]/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-white" />
-                  <input required name="whatsapp" placeholder="WhatsApp" class="w-full bg-[#121212] border border-[#EAEAEA]/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-white" />
-                  <input required name="company" placeholder="Sua Empresa / Nicho" class="w-full bg-[#121212] border border-[#EAEAEA]/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-white" />
-                  <select required name="interest" class="w-full bg-[#121212] border border-[#EAEAEA]/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-[#EAEAEA] appearance-none">
-                      <option value="">Qual o seu interesse principal?</option>
-                      <option value="Consultoria">Consultoria Estratégica</option>
-                      <option value="Tráfego">Gestão de Tráfego</option>
-                      <option value="Landing Page/Site">Desenvolvimento de LP / Site</option>
-                      <option value="Múltiplos">Projeto Completo</option>
-                  </select>
-                </div>
-                <button type="submit" class="w-full bg-[#00F0FF] text-[#121212] py-5 rounded-2xl font-black text-xl uppercase hover:bg-white transition-all shadow-xl flex justify-center items-center gap-3">
-                  Enviar Dados para Análise 
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></svg>
-                </button>
-            </form>
-
-            <div id="form-success" class="hidden text-center py-16 animate-in">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF] mx-auto mb-6"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-                <h3 class="text-3xl font-black text-white uppercase tracking-widest mb-4">DADOS RECEBIDOS!</h3>
-                <p class="text-[#EAEAEA]/60">A nossa equipa analisará o seu cenário e entrará em contacto muito em breve.</p>
-            </div>
-        </div>
-      </div>
-  </section>
-
-  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-    
-    <!-- Janela de Chat -->
-    <div id="chat-window" class="hidden mb-4 w-[350px] md:w-[400px] h-[550px] bg-[#1A1D24] border border-[#EAEAEA]/10 rounded-[2.5rem] shadow-2xl flex-col overflow-hidden animate-in">
-      <div class="bg-[#121212] p-6 flex items-center justify-between border-b border-[#EAEAEA]/5">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 bg-[#00F0FF] rounded-full flex items-center justify-center text-[#121212] shadow-[0_0_10px_#00F0FF]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-          </div>
-          <span class="font-black text-sm text-white tracking-widest uppercase text-xs">Consultor Virtual</span>
-        </div>
-        <button id="chat-close" class="text-[#EAEAEA]/30 hover:text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
+  <section class="relative pt-40 pb-20 lg:pt-52 lg:pb-32 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <!-- Text Content -->
+    <div class="flex-1 animate-fade-up" style="animation-delay: 0.1s;">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-semibold uppercase tracking-widest text-[#00F0FF] mb-8">
+        <span class="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse"></span> Agência de Performance
       </div>
       
-      <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-hide bg-[#121212]">
-        <div class="flex justify-start">
-          <div class="max-w-[85%] p-4 text-sm leading-relaxed shadow-lg bg-[#1A1D24] text-[#EAEAEA]/90 border border-[#EAEAEA]/5 rounded-2xl rounded-tl-sm">
-            Olá! Sou o consultor virtual da Momesso Digital. Posso ajudar a direcionar o melhor serviço para a sua necessidade atual?
-          </div>
-        </div>
+      <h1 class="text-5xl lg:text-7xl font-black leading-[1.05] tracking-tighter mb-6 uppercase">
+        Nós não entregamos likes.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-white">Entregamos Vendas.</span>
+      </h1>
+      
+      <p class="text-lg text-gray-400 mb-10 max-w-xl leading-relaxed">
+        Chega de agências que não entendem o seu negócio. Atuamos como parceiros estratégicos construindo um ecossistema digital focado exclusivamente em escalar a sua receita.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contato" class="bg-[#00F0FF] text-[#0A0A0A] px-8 py-4 font-black uppercase tracking-wide text-center hover:bg-white transition-colors flex items-center justify-center gap-2">
+          Quero Escalar Minhas Vendas
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
       </div>
-
-      <div id="typing-indicator" class="hidden p-4 bg-[#121212] text-[10px] font-black text-[#00F0FF] uppercase tracking-[0.3em] items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Analisando...
-      </div>
-
-      <form id="chat-form" class="p-4 bg-[#1A1D24] border-t border-[#EAEAEA]/5">
-        <div class="relative">
-          <input type="text" id="chat-input" placeholder="Tire sua dúvida aqui..." class="w-full bg-[#121212] border border-[#EAEAEA]/10 focus:border-[#00F0FF] rounded-2xl pl-5 pr-14 py-4 text-sm outline-none text-white transition-all shadow-inner" />
-          <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#00F0FF] text-[#121212] rounded-xl flex items-center justify-center hover:scale-105 transition-transform">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></svg>
-          </button>
-        </div>
-      </form>
     </div>
 
-    <!-- Botão Chat -->
-    <button id="chat-btn" class="w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 bg-[#00F0FF] text-[#121212]">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="chat-icon-open"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    </button>
-  </div>
-
-  <footer class="bg-[#1A1D24] border-t border-[#EAEAEA]/5 pt-20 pb-10 mt-10">
-    <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-        <div class="space-y-6">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-[#00F0FF] rounded-lg flex items-center justify-center">
-              <span class="text-[#121212] font-black text-lg italic">M</span>
-            </div>
-            <span class="text-lg font-black tracking-tighter uppercase text-white">MOMESSO<span class="text-[#00F0FF]">DIGITAL</span></span>
+    <!-- Hero Image Placeholder (Crucial for the "Clean/Convertible" look) -->
+    <div class="flex-1 w-full relative animate-fade-up" style="animation-delay: 0.3s;">
+      <!-- Decorative background blur -->
+      <div class="absolute inset-0 bg-[#00F0FF]/10 blur-[100px] rounded-full -z-10"></div>
+      
+      <!-- Main Image Container -->
+      <div class="relative w-full aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
+        <img src="https://placehold.co/800x600/111827/00F0FF?text=Sua+Foto+Aqui\n(Equipe+ou+Reunião)" alt="Equipe Momesso Digital" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        
+        <!-- Floating Badge -->
+        <div class="absolute bottom-6 left-6 bg-[#0A0A0A]/80 backdrop-blur border border-white/10 p-4 rounded-xl flex items-center gap-4">
+          <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-[#00F0FF]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
           </div>
-          <p class="text-[#EAEAEA]/60 text-sm leading-relaxed">
-            Estratégia e performance absolutas. Consultoria, Tráfego Pago e LPs de alta conversão.
-          </p>
+          <div>
+            <p class="text-sm text-gray-400 font-semibold uppercase tracking-wider">Foco Absoluto em</p>
+            <p class="text-xl font-black text-white">ROI & Performance</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="metodo" class="py-24 bg-[#111111] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
         <div>
-          <h4 class="text-white font-black uppercase tracking-widest text-xs mb-6">Navegação</h4>
-          <ul class="space-y-3 text-sm font-medium text-[#EAEAEA]/60">
-            <li><a href="sobre.html" class="hover:text-[#00F0FF] transition-colors">Sobre Nós</a></li>
-            <li><a href="#servicos" class="hover:text-[#00F0FF] transition-colors">Serviços</a></li>
-            <li><a href="#resultados" class="hover:text-[#00F0FF] transition-colors">Resultados</a></li>
-            <li><a href="#portfolio" class="hover:text-[#00F0FF] transition-colors">Portfólio Web</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-white font-black uppercase tracking-widest text-xs mb-6">Legal & Contactos</h4>
-          <ul class="space-y-3 text-sm font-medium text-[#EAEAEA]/60">
-            <li><a href="privacidade.html" class="text-white transition-colors cursor-default">Políticas de Privacidade</a></li>
-            <li class="pt-4 flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF]"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <a href="mailto:contato@momessodigital.com.br" class="hover:text-white transition-colors">contato@momessodigital.com.br</a>
+          <h2 class="text-3xl lg:text-5xl font-black uppercase tracking-tighter mb-6">Para quem é o nosso trabalho?</h2>
+          <p class="text-gray-400 text-lg mb-8 leading-relaxed">O nosso modelo de parceria não é para todos. Somos a solução ideal se você se identifica com algum destes cenários:</p>
+          
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <div class="mt-1 text-[#00F0FF]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-1">Frustração com Promessas Vazias</h4>
+                <p class="text-gray-500 text-sm">Contratou agências que mostram relatórios cheios de métricas de vaidade, mas o caixa da empresa não muda.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="mt-1 text-[#00F0FF]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-1">Leads Desqualificados</h4>
+                <p class="text-gray-500 text-sm">O marketing até gera contatos, mas a sua equipa comercial perde tempo com curiosos que não têm perfil de compra.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="mt-1 text-[#00F0FF]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-white mb-1">Falta de Previsibilidade</h4>
+                <p class="text-gray-500 text-sm">Vive dependendo de indicações ou de picos de vendas sazonais, sem ter uma máquina constante de captação.</p>
+              </div>
             </li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="text-white font-black uppercase tracking-widest text-xs mb-6">Redes Sociais</h4>
-          <div class="flex gap-4">
-              <a href="#" class="w-10 h-10 rounded-full bg-[#121212] flex items-center justify-center text-[#EAEAEA]/60 hover:bg-[#00F0FF] hover:text-[#121212] hover:scale-110 transition-all border border-[#EAEAEA]/5 shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-              </a>
-              <a href="#" class="w-10 h-10 rounded-full bg-[#121212] flex items-center justify-center text-[#EAEAEA]/60 hover:bg-[#00F0FF] hover:text-[#121212] hover:scale-110 transition-all border border-[#EAEAEA]/5 shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-              </a>
+        <div class="bg-[#0A0A0A] p-8 lg:p-12 border border-white/5 rounded-2xl relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-[#00F0FF]/5 rounded-full blur-[80px] pointer-events-none"></div>
+          <h3 class="text-2xl font-black uppercase text-white mb-6 relative z-10">Como resolvemos isso?</h3>
+          <p class="text-gray-400 mb-8 relative z-10 leading-relaxed">
+            Nós sentamos do mesmo lado da mesa que você. Não olhamos apenas para os anúncios, olhamos para o seu <strong class="text-white">Funil de Vendas Completo</strong>. Da estratégia inicial até o fechamento da venda.
+          </p>
+          
+          <!-- Estilos da Animação do Gráfico -->
+          <style>
+            @keyframes drawChart { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+            @keyframes fadeChartArea { from { opacity: 0; } to { opacity: 1; } }
+            .animate-draw-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawChart 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+            .animate-fade-area { opacity: 0; animation: fadeChartArea 2s ease-out 0.8s forwards; }
+          </style>
+
+          <!-- Gráfico Interativo Nativo (Substitui a imagem) -->
+          <div class="relative w-full rounded-xl border border-white/10 bg-[#050505] p-5 sm:p-6 z-10 overflow-hidden shadow-2xl">
+            <!-- Glow Effect de Fundo -->
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-[#00F0FF]/10 blur-[60px] pointer-events-none"></div>
+            
+            <!-- Header do Gráfico -->
+            <div class="flex justify-between items-start mb-8 relative z-10">
+                <div>
+                    <span class="text-white font-bold block text-sm sm:text-base">Evolução de Faturamento</span>
+                    <span class="text-xs text-gray-500">Projeção a 6 meses (Escala Momesso)</span>
+                </div>
+                <span class="text-[#00F0FF] text-xs sm:text-sm font-bold bg-[#00F0FF]/10 px-3 py-1.5 rounded-full border border-[#00F0FF]/20 flex items-center gap-1 shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9-9-9 9"/></svg>
+                    340%
+                </span>
+            </div>
+
+            <!-- Desenho do Gráfico SVG -->
+            <svg viewBox="0 0 600 200" class="w-full h-auto overflow-visible relative z-10">
+                <defs>
+                  <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.35"/>
+                    <stop offset="100%" stop-color="#00F0FF" stop-opacity="0.0"/>
+                  </linearGradient>
+                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                <!-- Linhas de Grade Horizontais -->
+                <line x1="0" y1="160" x2="600" y2="160" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+                <line x1="0" y1="120" x2="600" y2="120" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" stroke-dasharray="4 4"/>
+                <line x1="0" y1="80" x2="600" y2="80" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" stroke-dasharray="4 4"/>
+                <line x1="0" y1="40" x2="600" y2="40" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" stroke-dasharray="4 4"/>
+
+                <!-- Área abaixo da curva (Preenchimento Gradiente) -->
+                <polygon points="0,160 0,140 120,130 240,110 360,60 480,30 600,0 600,160" fill="url(#chartGradient)" class="animate-fade-area" />
+
+                <!-- Linha Principal (Animação de crescimento) -->
+                <polyline points="0,140 120,130 240,110 360,60 480,30 600,0" fill="none" stroke="#00F0FF" stroke-width="3" filter="url(#glow)" stroke-linejoin="round" stroke-linecap="round" class="animate-draw-line" />
+
+                <!-- Pontos de Dados -->
+                <circle cx="0" cy="140" r="4" fill="#0A0A0A" stroke="#00F0FF" stroke-width="2" class="animate-fade-area"/>
+                <circle cx="120" cy="130" r="4" fill="#0A0A0A" stroke="#00F0FF" stroke-width="2" class="animate-fade-area"/>
+                <circle cx="240" cy="110" r="4" fill="#0A0A0A" stroke="#00F0FF" stroke-width="2" class="animate-fade-area"/>
+                <circle cx="360" cy="60" r="4" fill="#0A0A0A" stroke="#00F0FF" stroke-width="2" class="animate-fade-area"/>
+                <circle cx="480" cy="30" r="4" fill="#0A0A0A" stroke="#00F0FF" stroke-width="2" class="animate-fade-area"/>
+                
+                <!-- Ponto Final (Ativo / Com Pulso) -->
+                <circle cx="600" cy="0" r="6" fill="#00F0FF" stroke="#fff" stroke-width="2" class="animate-pulse animate-fade-area"/>
+                
+                <!-- Textos do Eixo X -->
+                <text x="0" y="185" fill="#6B7280" font-size="12" font-weight="600" font-family="Inter, sans-serif" text-anchor="start">Mês 1</text>
+                <text x="120" y="185" fill="#4B5563" font-size="12" font-weight="600" font-family="Inter, sans-serif" text-anchor="middle">Mês 2</text>
+                <text x="240" y="185" fill="#4B5563" font-size="12" font-weight="600" font-family="Inter, sans-serif" text-anchor="middle">Mês 3</text>
+                <text x="360" y="185" fill="#4B5563" font-size="12" font-weight="600" font-family="Inter, sans-serif" text-anchor="middle">Mês 4</text>
+                <text x="480" y="185" fill="#4B5563" font-size="12" font-weight="600" font-family="Inter, sans-serif" text-anchor="middle">Mês 5</text>
+                <text x="600" y="185" fill="#00F0FF" font-size="12" font-weight="900" font-family="Inter, sans-serif" text-anchor="end">Hoje</text>
+            </svg>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </div> <!-- Fim da Home View -->
+
+  <div id="portfolio-view" class="hidden pt-32 pb-24 min-h-screen bg-[#0A0A0A]">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 animate-fade-up">
+        <span class="text-[#00F0FF] text-sm font-bold uppercase tracking-[0.2em] block mb-4">Alta Conversão</span>
+        <h2 class="text-4xl lg:text-5xl font-black uppercase tracking-tighter mb-6">Portfólio Web</h2>
+        <p class="text-gray-400 text-lg">Páginas desenhadas não apenas para serem bonitas, mas para funcionarem como máquinas de aquisição de clientes.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Projeto 1 -->
+        <div class="bg-[#111111] border border-white/5 rounded-2xl overflow-hidden group hover:border-[#00F0FF]/30 transition-all duration-500">
+          <div class="h-64 overflow-hidden relative border-b border-white/5">
+             <div class="absolute inset-0 bg-[#00F0FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-sm">
+                <span class="bg-[#0A0A0A] text-[#00F0FF] px-6 py-2 font-bold uppercase tracking-wider text-sm border border-[#00F0FF]/30">Ver Detalhes</span>
+             </div>
+             <img src="https://placehold.co/600x400/1F2937/00F0FF?text=Landing+Page+Serviços" alt="Projeto 1" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-8">
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 block">B2B / Serviços</span>
+            <h3 class="text-2xl font-black text-white mb-3">Tech Solutions Inc.</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Landing page focada em captação de leads qualificados. Aumento de 42% na taxa de conversão após reformulação.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">UI/UX</span>
+              <span class="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">Copywriting</span>
+              <span class="text-xs text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-1 rounded border border-[#00F0FF]/20">Taxa Conv: 18%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projeto 2 -->
+        <div class="bg-[#111111] border border-white/5 rounded-2xl overflow-hidden group hover:border-[#00F0FF]/30 transition-all duration-500">
+          <div class="h-64 overflow-hidden relative border-b border-white/5">
+             <div onclick="openModal('modal-trama-doro')" class="absolute inset-0 bg-[#00F0FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-sm cursor-pointer">
+                <span class="bg-[#0A0A0A] text-[#00F0FF] px-6 py-2 font-bold uppercase tracking-wider text-sm border border-[#00F0FF]/30 hover:bg-[#00F0FF] hover:text-[#0A0A0A] transition-colors">Ver Detalhes</span>
+             </div>
+             <img src="https://placehold.co/600x400/1F2937/00F0FF?text=Trama+D'Oro" alt="Trama D'Oro" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-8">
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 block">E-commerce Premium & Admin</span>
+            <h3 class="text-2xl font-black text-white mb-3">Trama D'Oro <span class="text-[#00F0FF] font-light text-xl">| E-commerce</span></h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">E-commerce de alto padrão com vitrine de conversão premium e um Painel Administrativo exclusivo e seguro para a gestão da loja.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">Web App</span>
+              <span class="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">Dashboard Admin</span>
+              <span class="text-xs text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-1 rounded border border-[#00F0FF]/20">UX/UI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projeto 3 -->
+        <div class="bg-[#111111] border border-white/5 rounded-2xl overflow-hidden group hover:border-[#00F0FF]/30 transition-all duration-500">
+          <div class="h-64 overflow-hidden relative border-b border-white/5">
+             <div class="absolute inset-0 bg-[#00F0FF]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center backdrop-blur-sm">
+                <span class="bg-[#0A0A0A] text-[#00F0FF] px-6 py-2 font-bold uppercase tracking-wider text-sm border border-[#00F0FF]/30">Ver Detalhes</span>
+             </div>
+             <img src="https://placehold.co/600x400/1F2937/00F0FF?text=Página+de+Vendas+Infoproduto" alt="Projeto 3" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-8">
+            <span class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2 block">Infoproduto</span>
+            <h3 class="text-2xl font-black text-white mb-3">Mentoria Escalável</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Página de vendas (VSL) de alta retenção. Estrutura de copy validada e design focado inteiramente no Call to Action principal.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">Web Design</span>
+              <span class="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded">VSL</span>
+              <span class="text-xs text-[#00F0FF] bg-[#00F0FF]/10 px-2 py-1 rounded border border-[#00F0FF]/20">ROAS 7x</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="#contato" onclick="switchView('home')" class="inline-flex items-center justify-center gap-3 bg-white text-[#0A0A0A] px-8 py-4 font-black uppercase tracking-wide hover:bg-[#00F0FF] transition-colors rounded-sm">
+          Quero uma estrutura como estas
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL PORTFÓLIO: Trama D'Oro -->
+  <div id="modal-trama-doro" class="hidden fixed inset-0 z-[60] bg-[#0A0A0A]/95 backdrop-blur-sm flex items-center justify-center p-4 lg:p-6 opacity-0 transition-opacity duration-300">
+    <div class="bg-[#111111] border border-white/10 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto relative shadow-2xl">
+      
+      <!-- Botão Fechar -->
+      <button onclick="closeModal('modal-trama-doro')" class="fixed lg:absolute top-4 right-4 z-20 bg-[#0A0A0A] w-12 h-12 rounded-full flex items-center justify-center text-gray-400 hover:text-white border border-white/10 transition-colors shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+
+      <!-- Conteúdo do Modal -->
+      <div class="p-8 lg:p-12 relative z-10">
+        <span class="text-[#00F0FF] text-sm font-bold uppercase tracking-[0.2em] block mb-2">Estudo de Caso</span>
+        <h3 class="text-3xl lg:text-4xl font-black uppercase text-white mb-6">Trama D'Oro - E-commerce & Gestão</h3>
+        
+        <p class="text-gray-400 text-lg leading-relaxed mb-12 max-w-3xl">
+          Desenvolvimento completo de uma plataforma de e-commerce de alto padrão. O projeto foi dividido em duas frentes de atuação para garantir a melhor experiência para o cliente final e controle total para a operação.
+        </p>
+
+        <!-- Grid de Previews -->
+        <div class="grid grid-cols-1 gap-12 mb-6">
+          
+          <!-- Vitrine da Loja -->
+          <div class="space-y-5">
+            <h4 class="text-white font-bold text-2xl flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF]"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              1. Vitrine Premium (Front-End)
+            </h4>
+            <p class="text-base text-gray-400">Design sofisticado focado em Alta Conversão, navegação imersiva e checkout seguro para produtos de luxo.</p>
+            <div class="w-full aspect-video rounded-xl overflow-hidden border border-white/10 group relative">
+              <!-- Sugestão: Substitua o SRC pelo print da sua loja real -->
+              <img src="https://placehold.co/1200x675/1F2937/00F0FF?text=Print+da+Loja+Trama+D'Oro" alt="Vitrine Trama D'Oro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+
+          <!-- Divisória -->
+          <hr class="border-white/5">
+
+          <!-- Dashboard Admin -->
+          <div class="space-y-5">
+            <h4 class="text-white font-bold text-2xl flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#00F0FF]"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              2. Painel de Gestão (Admin Dashboard)
+            </h4>
+            <p class="text-base text-gray-400">Sistema administrativo restrito e seguro desenvolvido sob medida para a gestão de inventário, produtos e relatórios de vendas.</p>
+            <div class="w-full aspect-video rounded-xl overflow-hidden border border-white/10 group relative">
+               <!-- Sugestão: Substitua o SRC pelo print do painel admin real -->
+              <img src="https://placehold.co/1200x675/111827/00F0FF?text=Print+do+Painel+Admin" alt="Admin Trama D'Oro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="contato" class="py-24 bg-[#111111] border-y border-white/5 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00F0FF]/5 blur-[120px] rounded-full pointer-events-none -mr-40 -mt-40"></div>
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-16">
+        <span class="text-[#00F0FF] text-sm font-bold uppercase tracking-[0.2em] block mb-4">Vamos Conversar</span>
+        <h2 class="text-3xl lg:text-5xl font-black uppercase tracking-tighter text-white mb-6">Solicite um Diagnóstico</h2>
+        <p class="text-gray-400 text-lg">Preencha os dados abaixo e a nossa equipa entrará em contacto para analisar o cenário da sua empresa.</p>
+      </div>
+
+      <form name="submit-to-google-sheet" class="space-y-6 bg-[#0A0A0A] p-8 lg:p-12 rounded-2xl border border-white/5 shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input required name="nome" type="text" placeholder="Nome Completo" class="w-full bg-[#111111] border border-white/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-white transition-colors" />
+          <input required name="telefone" type="tel" placeholder="WhatsApp" class="w-full bg-[#111111] border border-white/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-white transition-colors" />
+          <input required name="url" type="url" placeholder="Site ou Instagram da Empresa" class="w-full bg-[#111111] border border-white/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-white transition-colors" />
+          <select required name="faturamento" class="w-full bg-[#111111] border border-white/10 p-4 rounded-xl outline-none focus:border-[#00F0FF] text-gray-400 appearance-none transition-colors">
+              <option value="" disabled selected>Faturamento Mensal</option>
+              <option value="Até 50k">Até R$ 50.000</option>
+              <option value="50k a 100k">R$ 50.000 a R$ 100.000</option>
+              <option value="100k a 500k">R$ 100.000 a R$ 500.000</option>
+              <option value="Acima de 500k">Acima de R$ 500.000</option>
+          </select>
+        </div>
+        
+        <button type="submit" id="btn-submit" class="w-full bg-[#00F0FF] text-[#0A0A0A] py-5 rounded-xl font-black text-lg uppercase tracking-wide hover:bg-white transition-colors mt-4 flex justify-center items-center gap-3">
+          Enviar para Análise 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 3 9-3 9 19-9Z"/><path d="M6 12h16"/></svg>
+        </button>
+        
+        <!-- Mensagem de Sucesso -->
+        <div id="form-msg" class="hidden text-center mt-6 p-4 bg-[#00F0FF]/10 border border-[#00F0FF]/30 rounded-xl">
+           <p class="text-[#00F0FF] font-bold">Dados enviados com sucesso! Entraremos em contacto muito em breve.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-[#0A0A0A] pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-b border-white/5 pb-12 mb-8">
+        
+        <a href="#" class="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
+          <div class="w-6 h-6 bg-[#00F0FF] flex items-center justify-center rounded-sm">
+            <span class="text-[#0A0A0A] font-black text-sm italic leading-none">M</span>
+          </div>
+          <span class="text-lg font-black tracking-tighter uppercase text-white">MOMESSO<span class="text-[#00F0FF] font-light">DIGITAL</span></span>
+        </a>
+
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-500 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
         </div>
       </div>
 
-      <div class="border-t border-[#EAEAEA]/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-        <p class="text-[10px] font-bold text-[#EAEAEA]/40 tracking-[0.2em] uppercase">
-          &copy; 2024 Momesso Digital. Todos os direitos reservados.
-        </p>
-        <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#EAEAEA]/30">
-          Estratégia & Conversão
-        </div>
+      <div class="flex flex-col md:flex-row justify-between items-center text-xs font-semibold text-gray-600 uppercase tracking-widest gap-4 text-center md:text-left">
+        <p>&copy; 2024 Momesso Digital. Agência de Performance.</p>
+        <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
       </div>
     </div>
   </footer>
@@ -422,124 +444,88 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       
-      // Navbar Scroll
-      const navbar = document.getElementById('navbar');
-      window.addEventListener('scroll', () => {
-        if(window.scrollY > 50) {
-          navbar.classList.add('bg-[#121212]/95', 'backdrop-blur-md', 'border-b', 'border-[#EAEAEA]/5', 'py-3', 'shadow-lg');
-          navbar.classList.remove('bg-transparent', 'py-5');
-        } else {
-          navbar.classList.remove('bg-[#121212]/95', 'backdrop-blur-md', 'border-b', 'border-[#EAEAEA]/5', 'py-3', 'shadow-lg');
-          navbar.classList.add('bg-transparent', 'py-5');
-        }
-      });
+      // Minimalist Navbar Scroll effect
+      // Simple Form Mock (Substituído pela Integração com Google Sheets)
+      const form = document.forms['submit-to-google-sheet'];
+      const msg = document.getElementById('form-msg');
+      const btnSubmit = document.getElementById('btn-submit');
+      
+      // Link oficial do Google Apps Script integrado
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxO_Pt7IzIGXiRu1ZqU6BjdsOFWhvzbjrERi3Gmk3tvJB2xTJAE25ovrIcWI8tcIRaPBw/exec';
 
-      // Menu Mobile
-      const btnMenu = document.getElementById('btn-menu');
-      const mobileMenu = document.getElementById('mobile-menu');
-      btnMenu.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex');
-      });
-      document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          mobileMenu.classList.remove('flex');
-        });
-      });
-
-      // Formulário
-      const form = document.getElementById('contact-form');
-      const formSuccess = document.getElementById('form-success');
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        form.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-        setTimeout(() => {
-          form.reset();
-          form.classList.remove('hidden');
-          formSuccess.classList.add('hidden');
-        }, 5000);
-      });
-
-      // Lógica do Chatbot
-      const chatBtn = document.getElementById('chat-btn');
-      const chatWindow = document.getElementById('chat-window');
-      const chatClose = document.getElementById('chat-close');
-      const chatForm = document.getElementById('chat-form');
-      const chatInput = document.getElementById('chat-input');
-      const chatMessages = document.getElementById('chat-messages');
-      const typingIndicator = document.getElementById('typing-indicator');
-
-      const toggleChat = () => {
-        chatWindow.classList.toggle('hidden');
-        chatWindow.classList.toggle('flex');
-        if(!chatWindow.classList.contains('hidden')) {
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-      };
-
-      chatBtn.addEventListener('click', toggleChat);
-      chatClose.addEventListener('click', toggleChat);
-
-      const addMessage = (role, text) => {
-        const wrapper = document.createElement('div');
-        wrapper.className = `flex mb-4 animate-in ${role === 'user' ? 'justify-end' : 'justify-start'}`;
-        
-        const bubble = document.createElement('div');
-        if (role === 'user') {
-            bubble.className = "max-w-[85%] p-4 text-sm leading-relaxed shadow-lg bg-[#00F0FF] text-[#121212] font-bold rounded-2xl rounded-tr-sm";
-        } else {
-            bubble.className = "max-w-[85%] p-4 text-sm leading-relaxed shadow-lg bg-[#1A1D24] text-[#EAEAEA]/90 border border-[#EAEAEA]/5 rounded-2xl rounded-tl-sm";
-        }
-        
-        bubble.textContent = text;
-        wrapper.appendChild(bubble);
-        chatMessages.appendChild(wrapper);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      };
-
-      chatForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const msg = chatInput.value.trim();
-        if(!msg) return;
-        
-        addMessage('user', msg);
-        chatInput.value = '';
-        
-        typingIndicator.classList.remove('hidden');
-        typingIndicator.classList.add('flex');
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        try {
-          const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({message: msg})
-          });
-
-          const rawText = await response.text();
-          let data;
+      // Validação de segurança para garantir que o formulário existe na página
+      if (form) {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
           
-          try {
-            data = JSON.parse(rawText);
-          } catch(e) {
-            throw new Error(`Servidor devolveu formato inválido. A Vercel está mal configurada.`);
-          }
+          const originalText = btnSubmit.innerText;
+          btnSubmit.innerText = 'Enviando...';
+          btnSubmit.disabled = true;
 
-          if(!response.ok) throw new Error(data.text || `Falha HTTP ${response.status}`);
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+              msg.classList.remove('hidden');
+              form.reset();
+              btnSubmit.innerText = originalText;
+              btnSubmit.disabled = false;
+              setTimeout(() => msg.classList.add('hidden'), 5000);
+            })
+            .catch(error => {
+              console.error('Erro!', error.message);
+              alert("Houve um erro ao enviar. Tente novamente mais tarde.");
+              btnSubmit.innerText = originalText;
+              btnSubmit.disabled = false;
+            });
+        });
+      }
+    });
 
-          typingIndicator.classList.remove('flex');
-          typingIndicator.classList.add('hidden');
-          addMessage('assistant', data.text);
+    function switchView(viewName) {
+      const homeView = document.getElementById('home-view');
+      const portfolioView = document.getElementById('portfolio-view');
+      
+      if (viewName === 'portfolio') {
+        homeView.classList.add('hidden');
+        homeView.classList.remove('block');
+        portfolioView.classList.remove('hidden');
+        portfolioView.classList.add('block');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        portfolioView.classList.add('hidden');
+        portfolioView.classList.remove('block');
+        homeView.classList.remove('hidden');
+        homeView.classList.add('block');
+      }
+    }
 
-        } catch(err) {
-          typingIndicator.classList.remove('flex');
-          typingIndicator.classList.add('hidden');
-          addMessage('assistant', `⚠️ Erro do Sistema: ${err.message}`);
-        }
-      });
-
+    // Funções do Modal de Portfólio
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+      }, 10);
+      document.body.style.overflow = 'hidden'; // Impede o fundo de rolar
+    }
+    
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300); 
+      document.body.style.overflow = 'auto'; // Volta o scroll normal
+    }
+    
+    // Fechar modal clicando fora da caixa
+    document.addEventListener('click', function(event) {
+      const modal = document.getElementById('modal-trama-doro');
+      // Se clicou no fundo escuro, fecha
+      if (event.target === modal) {
+        closeModal('modal-trama-doro');
+      }
     });
   </script>
 </body>
